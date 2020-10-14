@@ -9,7 +9,7 @@ After finished cloning the project:
 4. After database connected, go to the terminal and type "php artisan migrate", and your database automically inserted with tables that needed.
 5. Run application by typing in the terminal "php -S localhost:8000 -t public"
 
-## API LIST
+## API URL LIST
 
 * Using Postman and Local URL
 
