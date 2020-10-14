@@ -13,7 +13,7 @@ After finished cloning the project:
 
 * Using Postman and Local URL
 
-GET METHOD
+# GET METHOD
 1. Get all items (http://localhost:8000/items)
 2. Get items based on name or code (http://localhost:8000/items/{codeOrName})
 
@@ -25,7 +25,7 @@ GET METHOD
 
    Example: http://localhost:8000/delete/123456789111 -> returns delete success notification if there is an item with the code given
    
-POST METHOD
+# POST METHOD
 
 5. Creating new item (http://localhost:8000/create)
 
