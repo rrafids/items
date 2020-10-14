@@ -23,6 +23,7 @@ GET METHOD
    Example: http://localhost:8000/delete/123456789111 -> returns delete success notification if there is an item with the code given
    
 POST METHOD
+
 5. Creating new item (http://localhost:8000/create)
    Example: In Postman go to the body section and then form-data and send 2 key: name and description with their values -> return create success notification if there is no        duplication
 6. Updating an item (http://localhost:8000/update)
