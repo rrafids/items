@@ -19,7 +19,7 @@ class ItemController extends Controller
         //
     }
 
-    public function getAllItems()
+    public function getItems()
     {
         if (!empty(Item::all())) {
             $items = Item::all();
