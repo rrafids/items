@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $primaryKey = 'code';
+    protected $primaryKey = 'item_code';
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +15,7 @@ class Item extends Model
      * @var array
      */
     protected $fillable = [
-        'code', 'name', 'description'
+        'item_code', 'name', 'description'
     ];
 
     public $timestamps = false;
