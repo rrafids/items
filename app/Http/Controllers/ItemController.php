@@ -40,8 +40,8 @@ class ItemController extends Controller
     public function getItemsByCodeOrName($codeOrName)
     {
         if (!empty($codeOrName)) {
-            if (!empty(Item::where('code', $codeOrName)->get())) {
-                $items = Item::where('code', $codeOrName)->get();
+            if (!empty(Item::where('item_code', $codeOrName)->get())) {
+                $items = Item::where('item_code', $codeOrName)->get();
                 $status = 1;
             } else if(!empty(Item::where('name', $codeOrName)->get())) {
                 $items = Item::where('name', $codeOrName)->get();
@@ -65,8 +65,8 @@ class ItemController extends Controller
 
     public function getItemByCode(Request $request)
     {
-        if (!empty($item = Item::where('code', $request->code)->first())) {
-            $item = Item::where('code', $request->code)->first();
+        if (!empty($item = Item::where('item_code', $request->code)->first())) {
+            $item = Item::where('item_code', $request->code)->first();
         } else {
             $item = "Item not found";
         }
@@ -82,7 +82,7 @@ class ItemController extends Controller
     {
         if (empty(Item::where('name', $request->name)->first())) {
             Item::create([
-                'code' => $this->generateCode(),
+                'item_code' => $this->generateCode(),
                 'name' => $request->name,
                 'description' => $request->description
             ]);
@@ -100,8 +100,8 @@ class ItemController extends Controller
 
     public function updateItem(Request $request)
     {
-        if (!empty(Item::where('code', $request->code)->first())) {
-            Item::where('code', $request->code)->update([
+        if (!empty(Item::where('item_code', $request->code)->first())) {
+            Item::where('item_code', $request->code)->update([
                 'name' => $request->name,
                 'description' => $request->description
             ]);
@@ -119,8 +119,8 @@ class ItemController extends Controller
 
     public function deleteItem($code)
     {
-        if (!empty(Item::where('code', $code)->first())) {
-            $item = Item::where('code', $code)->first();
+        if (!empty(Item::where('item_code', $code)->first())) {
+            $item = Item::where('item_code', $code)->first();
             $item->delete();
 
             return response()->json([
@@ -142,7 +142,7 @@ class ItemController extends Controller
     {
         $code = Str::random(12);
 
-        if (!empty(Item::where('code', $code)->first())) {
+        if (!empty(Item::where('item_code', $code)->first())) {
             return $this->generateCode();
         } else {
             return $code;
